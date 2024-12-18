@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Bangladesh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.22/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+            .lexend-font{
+              font-family: "Lexend", serif;
+              font-optical-sizing: auto;
+              font-style: normal;
+            }
+    </style>
+</head>
+<body class="lexend-font container mx-auto">
+    <header class="container my-6 mb-24">
+        <div class="navbar bg-base-100">
+            <div class="navbar-start">
+                <a class="btn bg-[#B4F461] text-xl " id="blog">Blog</a>
+            </div>
+            <div class="navbar-center">
+              <div class="flex items-center gap-5">
+                <img src="assets/logo.png" alt="">
+                <h3 class="hidden md:block font-2xl font-bold">Donate Bangladesh</h3>
+              </div>
+            </div>
+            <div class="navbar-end">
+              <div class="flex items-center gap-2">
+                <img src="assets/coin.png" alt="">
+                <h5 class="font-xl"><span id="available-money">5500</span> BDT</h5>
+              </div>
+            </div>
+          </div>
+    </header>
+    <main>
+      <section class="mb-24">
+        <div class="flex space-y-5 space-x-0 md:space-y-0  md:space-x-8 flex-col md:flex-row  md:justify-center px-4 md:px-0">
+          <button class="btn btn-outline rounded-xl px-6 md:px-16" id="donation">Donation</button>
+          <button class="btn btn-outline  rounded-xl px-6 md:px-16" id="history">History</button>
+        </div>
+      </section>
+
+      <section class="mb-24">
+        <ul id="donation-history" class="shadow-xl">
+           
+        </ul>
+     </section>
+
+    </main>
+    <script>
+        document.getElementById('donation').addEventListener('click',function(event){
+            event.preventDefault();
+            window.location.href ='./index.html';
+        })
+    </script>
+    <script>
+        document.getElementById('blog').addEventListener('click',function(event){
+            event.preventDefault();
+            window.location.href ='./faq.html';
+        })
+    </script>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const donationHistoryElement = document.getElementById('donation-history');
+        let i = 1;
+    
+        while (urlParams.has(`donation${i}`)) {
+            const donationAmount = urlParams.get(`donation${i}`);
+            const donationTime = urlParams.get(`time${i}`);
+            const formattedDate = new Date(donationTime).toLocaleString('en-BD', {
+                timeZone: 'Asia/Dhaka',
+                weekday: 'short',
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+            const card = document.createElement('div');
+            card.className = 'p-6 bg-white shadow-lg rounded-lg border border-gray-200 mb-4';
+    
+            const donationAmountElement = document.createElement('h2');
+            donationAmountElement.className = 'text-xl font-bold text-gray-600 mb-2';
+            donationAmountElement.textContent = `Donation: ${donationAmount} BDT`;
+            card.appendChild(donationAmountElement);
+    
+            const donationDateElement = document.createElement('p');
+            donationDateElement.className = 'text-sm text-gray-500';
+            donationDateElement.textContent = `Readable Date: ${formattedDate}`;
+            card.appendChild(donationDateElement);
+    
+            const originalDateElement = document.createElement('p');
+            originalDateElement.className = 'text-sm text-gray-500 italic';
+            originalDateElement.textContent = `Date: ${donationTime}`;
+            card.appendChild(originalDateElement);
+    
+            donationHistoryElement.appendChild(card);
+    
+            i++;
+        }
+    </script>
+    
+
+    
+    
+    
+</body>
+</html>

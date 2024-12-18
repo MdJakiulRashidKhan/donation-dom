@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Bangladesh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.22/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+            .lexend-font{
+              font-family: "Lexend", serif;
+              font-optical-sizing: auto;
+              font-style: normal;
+            }
+    </style>
+</head>
+<body class="lexend-font container mx-auto">
+    <header class=" my-6">
+        <div class="navbar bg-base-100">
+            <div class="navbar-start">
+                <a class="btn bg-[#B4F461] text-xl" id="home">Home</a>
+            </div>
+            <div class="navbar-center">
+              <div class="flex items-center gap-3">
+                <img src="assets/logo.png" alt="">
+                <h3 class="hidden md:block font-2xl font-bold">Donate Bangladesh</h3>
+              </div>
+            </div>
+            <div class="navbar-end">
+              <div class="flex items-center gap-2">
+                <img src="assets/coin.png" alt="">
+                <h3><span>5500</span> BDT</h3>
+              </div>
+            </div>
+          </div>
+    </header>
+    <main>
+        <section class="mt-24 px-6">
+            <div>
+                <h1 class="text-2xl md:text-4xl font-bold">Important FAQ</h1>
+            </div>
+            <div class="join join-vertical w-full mt-24">
+                <div class="collapse collapse-arrow join-item border-base-300 border">
+                  <input type="radio" name="my-accordion-4" checked="checked" />
+                  <div class="collapse-title text-xl font-medium">What is Document Object Model (DOM)?</div>
+                  <div class="collapse-content">
+                    <p class="text-gray-700">The Document Object Model (DOM) is a programming interface for web documents, representing the page so that programs can manipulate its structure, style, and content. It treats the document as a tree of nodes, where each node represents a part of the page, such as elements, attributes, and text. The DOM allows programming languages, like JavaScript, to interact with HTML or XML documents dynamically. Through the DOM, developers can create, delete, or modify elements, attributes, and content on a webpage without reloading the entire page. It provides a structured way to update and manage the page's content, enabling interactive web applications.</p>
+                  </div>
+                </div>
+                <div class="collapse collapse-arrow join-item border-base-300 border">
+                  <input type="radio" name="my-accordion-4" />
+                  <div class="collapse-title text-xl font-medium">How do you select an element from the Dom?</div>
+                  <div class="collapse-content">
+                    <p class="text-gray-700">To select an element from the DOM in JavaScript, you can use several methods. The `getElementById()` method selects an element by its unique ID. The `getElementsByClassName()` method retrieves all elements with a specific class name, returning a live HTMLCollection. The `getElementsByTagName()` method selects elements based on their tag name, also returning a live HTMLCollection. For more complex selections, `querySelector()` allows selecting the first matching element based on a CSS selector, while `querySelectorAll()` selects all matching elements, returning a static NodeList.</p>
+                  </div>
+                </div>
+                <div class="collapse collapse-arrow join-item border-base-300 border">
+                  <input type="radio" name="my-accordion-4" />
+                  <div class="collapse-title text-xl font-medium">What is event delegation in the context of the DOM, and why is it useful?</div>
+                  <div class="collapse-content">
+                    <p class="text-gray-700">Event delegation is a technique where a single event listener is attached to a parent element instead of individual listeners on each child element. It leverages event bubbling, where an event on a child element propagates up to its ancestors. The parent element listens for the event and handles it based on the target child element. This approach improves performance by reducing the number of event listeners in the DOM. Event delegation is also useful for handling dynamically added elements without needing to attach separate listeners to them.</p>
+                  </div>
+                </div>
+                <div class="collapse collapse-arrow join-item border-base-300 border">
+                    <input type="radio" name="my-accordion-4" checked="checked" />
+                    <div class="collapse-title text-xl font-medium">How do you manipulate an element's attributes and style using the Dom?</div>
+                    <div class="collapse-content">
+                      <p class="text-gray-700">To manipulate an element's attributes in the DOM, you can use methods like `getAttribute()`, `setAttribute()`, and `removeAttribute()`. `getAttribute()` retrieves the value of an attribute, while `setAttribute()` sets or updates the attribute's value, and `removeAttribute()` removes the attribute. For manipulating an element's style, you can directly modify the `style` property to change inline CSS styles like `backgroundColor` or `fontSize`. Alternatively, the `classList` property allows you to add, remove, or toggle CSS classes on an element. These methods enable dynamic changes to an element's appearance and behavior on a webpage.</p>
+                    </div>
+                  </div>
+              </div>
+        </section>
+    </main>
+    
+    <script>
+        document.getElementById('home').addEventListener('click',function(event){
+            event.preventDefault();
+            window.location.href ='./index.html';
+        })
+    </script>
+</body>
+</html>
